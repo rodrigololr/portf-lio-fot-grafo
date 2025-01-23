@@ -99,7 +99,8 @@ nav li a {
     max-width: 1400px; /* Limite de largura da galeria */
     margin: 0 auto; /* Centraliza a galeria */
     padding: 10px;
-    align-items: stretch; /* Garante que os itens fiquem com a mesma altura */
+    align-items: center; /* Garante que os itens fiquem com a mesma altura */
+    justify-content: center;
 }
 
 /* Define o comportamento flexível dos contêineres */
@@ -120,6 +121,29 @@ nav li a {
     transition: transform 0.3s ease; /* Animação de hover */
 }
 
+.container-hori .photo:nth-child(2){
+    height: 100%;
+    max-height: 900px; /* Ajuste conforme necessário */
+    flex: 1 1 50%;
+}
+.container-hori .photo:nth-child(1),.container-hori .photo:nth-child(3){
+    height: 100%;
+    max-height: 450px;
+    flex: 1 1 25%;
+}
+
+.container-hori .photo:nth-child(1) img,.container-hori .photo:nth-child(3) img{
+    margin-top: 40px;
+}
+
 .photo img:hover {
     transform: scale(1.05); /* Efeito de zoom suave */
+}
+
+@media (max-width: 768px) {
+    .container-hori, .container {
+        gap: 8px;
+    }
+
+    
 }
